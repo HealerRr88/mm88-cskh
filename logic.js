@@ -12,8 +12,3 @@ document.getElementsByClassName("download-app")[0].addEventListener("click", fun
     alert("Vui lòng tải ứng dụng trên điện thoại Android hoặc iOS.");
   }
 });
-
-document.querySelector('.back-home').addEventListener('click', function (e) {
-  e.preventDefault();
-  history.back();
-});
