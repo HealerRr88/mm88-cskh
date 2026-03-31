@@ -127,7 +127,7 @@ export default function MainTabsComponent({ links }) {
                   <Link to={getLinkByKey(links, LINK_KEYS.GOP_Y_NHAN_THUONG, isMobile)} className="col-4">
                     <img className="w-100" src={isMobile ? gop_y_nhan_thuong_mb_img : gop_y_nhan_thuong_img} alt="gop_y_nhan_thuong_img" />
                   </Link>
-                  <Link to={getLinkByKey(links, LINK_KEYS.HOTLINE, isMobile)} className="col-4">
+                  <Link to={`tel:${getLinkByKey(links, LINK_KEYS.HOTLINE, isMobile)}`} className="col-4">
                     <img className="w-100" src={isMobile ? hotline_mb_img : hotline_img} alt="hotline_img" />
                   </Link>
                   <Link to={getLinkByKey(links, LINK_KEYS.QUA_TANG_TRI_AN, isMobile)} className="col-4">
