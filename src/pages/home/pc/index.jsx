@@ -28,6 +28,8 @@ export default function PCPage({ links }) {
             links={links}
           />
 
+          {/* comment to update */}
+
           {/* <AppDownloadComponent
             links={links}
           /> */}
