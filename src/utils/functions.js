@@ -1,15 +1,15 @@
-import { LINK_DEVICES, DEFAULT_LINKS } from "./config";
+import { DEVICES, DEFAULT_LINKS } from "./config";
 
 export function getLinkByKey(links, key, isMobile) {
   if (!links || !key) return '#';
 
-  const mobilebLink = links.find(item => item.key === key && item.device === LINK_DEVICES.MOBILE);
-  const desktopLink = links.find(item => item.key === key && item.device === LINK_DEVICES.DESKTOP);
-  const allLink = links.find(item => item.key === key && item.device === LINK_DEVICES.ALL);
+  const mobilebLink = links.find(item => item.key === key && item.device === DEVICES.MOBILE);
+  const desktopLink = links.find(item => item.key === key && item.device === DEVICES.DESKTOP);
+  const allLink = links.find(item => item.key === key && item.device === DEVICES.ALL);
 
-  const mobileDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === LINK_DEVICES.MOBILE);
-  const desktopDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === LINK_DEVICES.DESKTOP);
-  const allDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === LINK_DEVICES.ALL);
+  const mobileDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === DEVICES.MOBILE);
+  const desktopDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === DEVICES.DESKTOP);
+  const allDefaultLink = DEFAULT_LINKS.find(item => item.key === key && item.device === DEVICES.ALL);
 
   if (isMobile && mobilebLink) {
     return mobilebLink.url;
@@ -36,3 +36,9 @@ export function getLinkByKey(links, key, isMobile) {
     }
   }
 }
+
+export const buildFileUrl = (baseUrl, path) => {
+  const normalizedBaseUrl = String(baseUrl || "").replace(/\/+$/, "");
+  const normalizedPath = String(path || "").replace(/^\/+/, "");
+  return `${normalizedBaseUrl}/${normalizedPath}`;
+};

@@ -3,3 +3,8 @@
   height: calc(100vh - 71px);
   min-width: 1570px;
 }
+
+.closeButton {
+  width: 20px;
+  height: 20px;
+}
