@@ -1,8 +1,9 @@
 import title_img from "../../../assets/images/title.png";
+import left_gift_box_img from "../../../assets/images/left-gift-box.png";
+import right_gift_box_img from "../../../assets/images/right-gift-box.png";
 import MainTabsComponent from "../../../components/main_tabs";
 import styles from "./style.module.css";
 import { Player } from "@lottiefiles/react-lottie-player";
-import backgroundLottie from "../../../assets/lotties/background.json";
 import HeaderComponent from "../../../components/header";
 import PCItemsComponent from "../../../components/items/pc";
 import { createRef, Fragment, useRef } from "react";
@@ -10,6 +11,8 @@ import { Link } from "react-router-dom";
 import { R2_BUCKET_URL } from "../../../utils/config";
 import Draggable from "react-draggable";
 import { buildFileUrl } from "../../../utils/functions";
+
+const backgroundLottie = "https://pub-aaea1466aec5487293102caebb4f8a3c.r2.dev/lotties/background.json";
 
 export default function PCPage({ links, gifs }) {
 
@@ -35,6 +38,14 @@ export default function PCPage({ links, gifs }) {
           src={backgroundLottie}
           className={`${styles.background}`}
         />
+        <div className="position-absolute start-50 top-0 translate-middle-x overflow-hidden" style={{ width: 1568, height: 'calc(100vh - 71px)' }}>
+          <div className={`position-absolute start-0 ${styles.leftGiftBox}`}>
+            <img src={left_gift_box_img} alt="left_gift_box_img" className={`${styles.leftGiftBox}`} />
+          </div>
+          <div className={`position-absolute ${styles.rightGiftBox}`}>
+            <img src={right_gift_box_img} alt="right_gift_box_img" className={`${styles.rightGiftBox}`} />
+          </div>
+        </div>
         <div className={`h-100 container position-absolute start-50 top-0 translate-middle-x z-3 d-flex flex-column`} style={{ minWidth: 1320 }}>
           <div className="col-6 mx-auto text-center pt-4">
             <img className="w-100" src={title_img} alt="title" />
